@@ -7,11 +7,11 @@ var jsPsych = initJsPsych({
 
 // TODO: timeline_variables は事前に読み込んでいる前提
 var list_audio_preload = timeline_variables.map(function(obj) {
-    return [obj.a, obj.b, obj.x];
+    return [obj.audio];
 }).flat(1);
 
 var welcome = {
-    type: "html-keyboard-response",
+    type: jsPsychHtmlKeyboardResponse,
     choices: [' '],
     stimulus: `
     <p>　
@@ -23,10 +23,17 @@ var welcome = {
     `,
 };
 
+var fixation = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<div style="font-size:60px;">+</div>',
+    choices: "NO_KEYS",
+    trial_duration: 1000,
+}
+
 var cat_presentation = {
     type: jsPsychAudioKeyboardResponse,
     stimulus: jsPsych.timelineVariable('audio'),
-    choices: NO_KEYS",
+    choices: "NO_KEYS",
     trial_ends_after_audio: true,
 };
 
