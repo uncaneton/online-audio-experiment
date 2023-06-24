@@ -1,0 +1,39 @@
+// FIXME やTODO などを書いておく。
+// VSCode などのテキストエディタではショートカットが用意されている。
+
+var audio_file = 'espo-1.wav';
+
+var arr = []; // リスト
+var dict = { 'a': 'aa', 'b': 'bb' }; // 辞書
+
+// 上記の手順でコンソールを開き、以下を入力する。
+console.log(2*3); /* 2*3 の実行結果をコンソールに出力する。*/
+
+// 2*3 の実行結果をメッセージボックスに出力する。
+alert(2*3);
+
+// 変数を利用して計算する。
+var n1 = 2;
+var n2 = 3;
+alert(n1 * n2);
+
+var n1 = window.prompt('n1 の値を入力してください。');
+var n2 = window.prompt('n2 の値を入力してください。');
+alert(n1 * n2);
+
+function myFunction() {
+var n1 = window.prompt('n1 の値を入力してください。');
+var n2 = window.prompt('n2 の値を入力してください。');
+alert(n1 * n2); /* 関数はメッセージボックスに結果を出力する。*/
+
+myFunction();
+
+var myObject = {
+myFunction() {
+var n1 = window.prompt('n1 の値を入力してください。');
+var n2 = window.prompt('n2 の値を入力してください。');
+alert(n1 * n2); /* 関数はメッセージボックスに結果を出力する。*/
+}
+}
+
+myObject.myFunction();
