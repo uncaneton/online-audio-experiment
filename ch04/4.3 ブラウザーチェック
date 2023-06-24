@@ -1,0 +1,17 @@
+// こちらのブラウザーチェックは、単独では走れません。
+// jsPsychのスクリプトで定義し、タイムラインに入れる必要があります。
+
+var browser = {
+    type: jsPsychBrowserCheck,
+    inclusion_function: (data) => {
+        return data.browser == 'chrome' && data.mobile === false
+    },
+    exclusion_message: (data) => {
+        if (data.mobile) {
+            return '<p>この実験はパソコンでしか参加できません。</p>';
+        } else if (data.browser !== 'chrome') {
+            return '<p>この実験はGoogle Chromeからでしか参加できません。</p>'
+        }
+    }
+};
+
